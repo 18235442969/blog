@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import service from '../../model/service';
+import '../../mock/todoList';
 import './App.scss';
 
 class App extends Component {
   componentDidMount() {
-      console.log(11)
+    service.get('/todoList', {
+      dataType: 'json'
+    }).then(res => {
+      console.log(res);
+    })
   }
   render() {
     return (

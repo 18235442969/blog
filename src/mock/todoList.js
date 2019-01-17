@@ -1,12 +1,12 @@
 /*
  * @Author: monkey 
  * @Date: 2019-01-17 16:31:55 
- * @Last Modified by:   monkey 
- * @Last Modified time: 2019-01-17 16:31:55 
+ * @Last Modified by: monkey
+ * @Last Modified time: 2019-01-17 17:58:38
  */
 import Mock from 'mockjs';
 
-Mock.mock(/\/todoList.mock/, {
+Mock.mock('/todoList', {
   'success': true,
   'code': 0,
   'data': {
