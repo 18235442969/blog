@@ -1,33 +1,35 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.scss';
 import { getUserInfo } from '../../api/user'
 
 class App extends Component {
-  componentDidMount() {
-    getUserInfo({
+  constructor(props) {
+    super(props);
+    this.state = {
+      list: []
+    }
+  }
+
+  getUser = async () => {
+    let res = await getUserInfo({
       name: 'hzy'
-    }).then(res => {
-      console.log(res)
     })
+    this.setState({
+      list: res.data.data.list
+    })
+    console.log(res)
+  }
+  componentDidMount() {
+    this.getUser();
   }
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        {
+          this.state.list.map(user => {
+            return <div key={user.id}>{user.title}</div>
+          })
+        }
       </div>
     );
   }
