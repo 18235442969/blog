@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import service from '../../model/service';
-import '../../mock/todoList';
 import './App.scss';
+import { getUserInfo } from '../../api/user'
 
 class App extends Component {
   componentDidMount() {
-    service.get('/todoList', {
-      dataType: 'json'
+    getUserInfo({
+      name: 'hzy'
     }).then(res => {
-      console.log(res);
+      console.log(res)
     })
   }
   render() {
