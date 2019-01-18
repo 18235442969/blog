@@ -1,5 +1,4 @@
 import service from '../model/service'
-import '../mock/todoList';
 
 
 const getUserInfo = ({name}) => {
@@ -9,6 +8,14 @@ const getUserInfo = ({name}) => {
   return service.post('/todoList', data);
 }
 
+const getUser = ({name}) => {
+  let data = {
+    name
+  };
+  return service.post('/user', data);
+}
+
 export {
-  getUserInfo
+  getUserInfo,
+  getUser
 };
