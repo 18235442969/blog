@@ -5,7 +5,7 @@ export default class User extends Component {
   render() {
     return (
       <div>
-        <Link to="/app">child</Link>
+        <Link to="/app/child">child</Link>
         <br />
         <hr />
         <Link to="/user">user</Link>
