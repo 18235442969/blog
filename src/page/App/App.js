@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import { Switch, Redirect, Link } from 'react-router-dom';
-import CSSTransitionGroup from 'react-transition-group';
-// import 'animate.css';
+import { Switch, Redirect, Link, Route } from 'react-router-dom';
 import './App.scss';
 import { getUserInfo, getUser } from '../../api/user';
-import RouterMap from '../../router/routerMap'
+import RouterMap from '../../router/routerMap';
 
 class App extends Component {
   constructor(props) {
@@ -17,6 +15,8 @@ class App extends Component {
         id: '2',
         title: 'aasdasdasdsdasd'
       }],
+      show: false,
+      show1: true
     }
   }
 
@@ -34,13 +34,20 @@ class App extends Component {
   componentDidMount() {
     this.getUser();
   }
+  toggleState = () => {
+    this.setState({
+      show: !this.state.show
+    })
+  }
   render() {
     let routerList = RouterMap(this.props.routes);
     const list = this.state.list.map(user => {
-      return <div key={user.id}>{user.title}</div>
+      return <div key={user.id}>
+      {user.title}</div>
     })
     return (
       <div className="App">
+        <button onClick={this.toggleState}>click</button>
         <Link to="/app/child" className="link">child</Link>
         <br />
         <hr />
@@ -48,17 +55,11 @@ class App extends Component {
         <br />
         <hr />
         <Link to="/app/haha">haha</Link>
-        {/* <CSSTransitionGroup 
-          transitionName="example"
-          transitionEnterTimeout={500}
-          transitionLeaveTimeout={300}>
-          { list }
-        </CSSTransitionGroup> */}
-        
-        {/* <Switch>
+        {list}
+        <Switch location={this.props.location}>
           { routerList }
-          <Redirect to="/app/haha" />
-        </Switch> */}
+          <Redirect to="/app/" />
+        </Switch>
       </div>
     );
   }

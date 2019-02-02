@@ -34,29 +34,3 @@
   color: #282c34;
   font-size: 20px;
 }
-
-.example-enter {
-  opacity: 0.01;
-}
-
-.example-enter.example-enter-active {
-  opacity: 1;
-  transition: opacity 3000ms ease-in;
-  -webkit-transition: opacity 3000ms ease-in;
-  -moz-transition: opacity 3000ms ease-in;
-  -ms-transition: opacity 3000ms ease-in;
-  -o-transition: opacity 3000ms ease-in;
-}
-
-.example-leave {
-  opacity: 1;
-}
-
-.example-leave.example-leave-active {
-  opacity: 0.01;
-  transition: opacity 3000ms ease-in;
-  -webkit-transition: opacity 3000ms ease-in;
-  -moz-transition: opacity 3000ms ease-in;
-  -ms-transition: opacity 3000ms ease-in;
-  -o-transition: opacity 3000ms ease-in;
-}

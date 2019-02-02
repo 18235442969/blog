@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import Loadable from 'react-loadable';
-import RouterLoading from './routerLoading'
+import RouterLoading from './routerLoading';
 
 export default (data) => {
   return data.map(router => {
@@ -10,10 +10,10 @@ export default (data) => {
       loading: RouterLoading
     });
     return router.exact ? <Route exact path={router.path} render={props => (
-            <AsyncComponent {...props} routes={router.routes}></AsyncComponent>
-          )} key={router.path} /> : <Route path={router.path} render={props => (
-            <AsyncComponent {...props} routes={router.routes}></AsyncComponent>
-          )} key={router.path} /> 
+      <AsyncComponent {...props} routes={router.routes}></AsyncComponent>
+    )} key={router.path} /> : <Route path={router.path} render={props => (
+      <AsyncComponent {...props} routes={router.routes}></AsyncComponent>
+    )} key={router.path} />
   })
 }
 
