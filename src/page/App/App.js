@@ -58,7 +58,7 @@ class App extends Component {
         {list}
         <Switch location={this.props.location}>
           { routerList }
-          <Redirect to="/app/" />
+          <Redirect to="/app/haha" />
         </Switch>
       </div>
     );
