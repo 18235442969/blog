@@ -123,5 +123,6 @@
     "presets": [
       "react-app"
     ]
-  }
+  },
+  "homepage":"."
 }
